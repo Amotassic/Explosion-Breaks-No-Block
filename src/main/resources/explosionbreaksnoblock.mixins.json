@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.amotassic.explosionbreaksnoblock.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BedBlockMixin",
+    "CreateExplosionMixin",
+    "CreeperEntityMixin",
+    "EndCrystalMixin",
+    "FireballEntityMixin",
+    "RespawnAnchorMixin",
+    "TntEntityMixin",
+    "TntMinecartMixin",
+    "WithEntityMixin",
+    "WitherSkullMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
