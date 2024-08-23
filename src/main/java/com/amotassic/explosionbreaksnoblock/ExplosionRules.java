@@ -26,5 +26,24 @@ public class ExplosionRules {
     public static final GameRules.Key<GameRules.BooleanRule> EBNB_WITHER_SKULL =
             GameRuleRegistry.register("EBNB:wither_skull", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
 
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_ALL =
+            GameRuleRegistry.register("ENID:all", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_CREEPER =
+            GameRuleRegistry.register("ENID:creeper", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_END_CRYSTAL =
+            GameRuleRegistry.register("ENID:end_crystal", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_FIREBALL =
+            GameRuleRegistry.register("ENID:fireball", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_RESPAWN_BLOCKS =
+            GameRuleRegistry.register("ENID:respawn_blocks", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_TNT =
+            GameRuleRegistry.register("ENID:tnt", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_TNT_MINECART =
+            GameRuleRegistry.register("ENID:tnt_minecart", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_WITHER =
+            GameRuleRegistry.register("ENID:wither", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+    public static final GameRules.Key<GameRules.BooleanRule> ENID_WITHER_SKULL =
+            GameRuleRegistry.register("ENID:wither_skull", GameRules.Category.MISC, GameRuleFactory.createBooleanRule(false));
+
     public static void ExplosionRulesRegister(){}
 }
