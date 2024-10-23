@@ -1,0 +1,22 @@
+{
+  "gamerule.EBNB:all": "All explosions can't break block",
+  "gamerule.EBNB:bed": "Bed explosion can't break block",
+  "gamerule.EBNB:creeper": "Creeper explosion can't break block",
+  "gamerule.EBNB:end_crystal": "End crystal explosion can't break block",
+  "gamerule.EBNB:fireball": "Fireball explosion can't break block",
+  "gamerule.EBNB:respawn_anchor": "Respawn anchor explosion can't break block",
+  "gamerule.EBNB:tnt": "Tnt explosion can't break block",
+  "gamerule.EBNB:tnt_minecart": "Tnt minecart explosion can't break block",
+  "gamerule.EBNB:wither": "Wither explosion can't break block",
+  "gamerule.EBNB:wither_skull": "Wither skull explosion can't break block",
+
+  "gamerule.ENID:all": "All explosions can't damage item",
+  "gamerule.ENID:creeper": "Creeper explosion can't damage item",
+  "gamerule.ENID:end_crystal": "End crystal explosion can't damage item",
+  "gamerule.ENID:fireball": "Fireball explosion can't damage item",
+  "gamerule.ENID:respawn_blocks": "Respawn blocks explosion can't damage item",
+  "gamerule.ENID:tnt": "Tnt explosion can't damage item",
+  "gamerule.ENID:tnt_minecart": "Tnt minecart explosion can't damage item",
+  "gamerule.ENID:wither": "Wither explosion can't damage item",
+  "gamerule.ENID:wither_skull": "Wither skull explosion can't damage item"
+}

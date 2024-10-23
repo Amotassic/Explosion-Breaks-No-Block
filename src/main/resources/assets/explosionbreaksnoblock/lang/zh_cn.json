@@ -1,0 +1,22 @@
+{
+  "gamerule.EBNB:all": "所有爆炸都不能破坏方块",
+  "gamerule.EBNB:bed": "床爆炸不破坏方块",
+  "gamerule.EBNB:creeper": "苦力怕爆炸不破坏方块",
+  "gamerule.EBNB:end_crystal": "末影水晶爆炸不破坏方块",
+  "gamerule.EBNB:fireball": "火球爆炸不破坏方块",
+  "gamerule.EBNB:respawn_anchor": "重生锚爆炸不破坏方块",
+  "gamerule.EBNB:tnt": "TNT爆炸不破坏方块",
+  "gamerule.EBNB:tnt_minecart": "TNT矿车爆炸不破坏方块",
+  "gamerule.EBNB:wither": "凋灵爆炸不破坏方块",
+  "gamerule.EBNB:wither_skull": "凋灵之首爆炸不破坏方块",
+
+  "gamerule.ENID:all": "所有爆炸都不能破坏掉落物",
+  "gamerule.ENID:creeper": "苦力怕爆炸不破坏掉落物",
+  "gamerule.ENID:end_crystal": "末影水晶爆炸不破坏掉落物",
+  "gamerule.ENID:fireball": "火球爆炸不破坏掉落物",
+  "gamerule.ENID:respawn_blocks": "重生方块爆炸不破坏掉落物",
+  "gamerule.ENID:tnt": "TNT爆炸不破坏掉落物",
+  "gamerule.ENID:tnt_minecart": "TNT矿车爆炸不破坏掉落物",
+  "gamerule.ENID:wither": "凋灵爆炸不破坏掉落物",
+  "gamerule.ENID:wither_skull": "凋灵之首爆炸不破坏掉落物"
+}

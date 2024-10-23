@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "explosionbreaksnoblock",
+  "version": "0.2",
+  "name": "ExplosionBreaksNoBlock",
+  "description": "I just don't want explosion to break blocks!",
+  "authors": ["Amotassic"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/explosion-breaks-no-block",
+    "sources": "https://github.com/Amotassic/Explosion-Breaks-No-Block",
+    "issues": "https://github.com/Amotassic/Explosion-Breaks-No-Block/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.amotassic.explosionbreaksnoblock.ExplosionBreaksNoBlock"
+    ]
+  },
+  "mixins": [
+    "explosionbreaksnoblock.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
