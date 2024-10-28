@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "explosionbreaksnoblock",
-  "version": "0.2",
+  "version": "0.2.1",
   "name": "ExplosionBreaksNoBlock",
   "description": "I just don't want explosion to break blocks!",
   "authors": ["Amotassic"],
@@ -23,6 +23,6 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.21-"
   }
 }

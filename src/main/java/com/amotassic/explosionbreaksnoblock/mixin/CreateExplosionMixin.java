@@ -1,6 +1,7 @@
 package com.amotassic.explosionbreaksnoblock.mixin;
 
-import com.amotassic.explosionbreaksnoblock.ExplosionRules;
+import com.amotassic.explosionbreaksnoblock.ExplosionBreaksNoBlock;
+import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.explosion.Explosion;
@@ -16,8 +17,8 @@ public abstract class CreateExplosionMixin {
 
     @ModifyArgs(method = "createExplosion", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/explosion/ExplosionImpl;<init>(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;Lnet/minecraft/util/math/Vec3d;FZLnet/minecraft/world/explosion/Explosion$DestructionType;)V"))
     public void CreateExplosion(Args args) {
-        boolean all = this.getGameRules().getBoolean(ExplosionRules.EBNB_ALL);
-        if (all) {
+        Entity entity = args.get(1);
+        if (ExplosionBreaksNoBlock.cancel(getGameRules(), entity)) {
             args.set(6, false);
             args.set(7, Explosion.DestructionType.KEEP);
         }

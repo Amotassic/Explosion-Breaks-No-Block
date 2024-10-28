@@ -6,15 +6,8 @@
   "mixins": [
     "BedBlockMixin",
     "CreateExplosionMixin",
-    "CreeperEntityMixin",
-    "EndCrystalMixin",
-    "FireballEntityMixin",
     "ItemEntityMixin",
-    "RespawnAnchorMixin",
-    "TntEntityMixin",
-    "TntMinecartMixin",
-    "WithEntityMixin",
-    "WitherSkullMixin"
+    "RespawnAnchorMixin"
   ],
   "injectors": {
     "defaultRequire": 1
