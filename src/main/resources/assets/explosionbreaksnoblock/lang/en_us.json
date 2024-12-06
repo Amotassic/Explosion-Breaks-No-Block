@@ -18,5 +18,8 @@
   "gamerule.ENID:tnt": "Tnt explosion can't damage item",
   "gamerule.ENID:tnt_minecart": "Tnt minecart explosion can't damage item",
   "gamerule.ENID:wither": "Wither explosion can't damage item",
-  "gamerule.ENID:wither_skull": "Wither skull explosion can't damage item"
+  "gamerule.ENID:wither_skull": "Wither skull explosion can't damage item",
+
+  "ebnb.not_enable": "No EBNB gamerule is set to true",
+  "ebnb.reset": "All EBNB gamerules reset to false"
 }

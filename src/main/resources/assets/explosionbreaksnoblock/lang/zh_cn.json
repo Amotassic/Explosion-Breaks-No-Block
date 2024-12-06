@@ -18,5 +18,8 @@
   "gamerule.ENID:tnt": "TNT爆炸不破坏掉落物",
   "gamerule.ENID:tnt_minecart": "TNT矿车爆炸不破坏掉落物",
   "gamerule.ENID:wither": "凋灵爆炸不破坏掉落物",
-  "gamerule.ENID:wither_skull": "凋灵之首爆炸不破坏掉落物"
+  "gamerule.ENID:wither_skull": "凋灵之首爆炸不破坏掉落物",
+
+  "ebnb.not_enable": "没有已启用的EBNB游戏规则",
+  "ebnb.reset": "已重设所有EBNB游戏规则"
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "explosionbreaksnoblock",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "name": "ExplosionBreaksNoBlock",
   "description": "I just don't want explosion to break blocks!",
   "authors": ["Amotassic"],
