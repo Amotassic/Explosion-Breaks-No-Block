@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.amotassic.explosionbreaksnoblock.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "explosionbreaksnoblock.refmap.json",
+  "mixins": [
+    "BedBlockMixin",
+    "CreateExplosionMixin",
+    "ItemEntityMixin",
+    "RespawnAnchorMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
