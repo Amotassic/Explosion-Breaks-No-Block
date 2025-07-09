@@ -1,8 +1,10 @@
 package com.amotassic.explosionbreaksnoblock.mixin;
 
 import com.amotassic.explosionbreaksnoblock.Common;
+import com.amotassic.explosionbreaksnoblock.platform.Services;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -22,8 +24,11 @@ public abstract class ItemEntityMixin extends Entity {
 
     @Inject(method = "hurt", at = @At(value = "HEAD"), cancellable = true)
     public void damage(DamageSource source, float pAmount, CallbackInfoReturnable<Boolean> cir) {
-        if (!getItem().isEmpty() && source.is(DamageTypeTags.IS_EXPLOSION)) {
-            if (Common.cancelItemDamageByExplosion(level().getGameRules(), source)) cir.setReturnValue(false);
+        if (!getItem().isEmpty() && (
+                        source.is(DamageTypeTags.IS_EXPLOSION) ||
+                                (Services.PLATFORM.isModLoaded("dragonsurvival") && source.is(DamageTypes.WIND_CHARGE))
+        )) {
+            if (Common.cancelItemDamageByExplosion(source)) cir.setReturnValue(false);
         }
     }
 }

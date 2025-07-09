@@ -1,6 +1,6 @@
 package com.amotassic.explosionbreaksnoblock.mixin;
 
-import com.amotassic.explosionbreaksnoblock.ExplosionRules;
+import com.amotassic.explosionbreaksnoblock.Common;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class BedBlockMixin {
     @Inject(method = "useWithoutItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;getCenter()Lnet/minecraft/world/phys/Vec3;"), cancellable = true)
     public void onUse(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir) {
-        boolean bed = world.getGameRules().getBoolean(ExplosionRules.EBNB_BED);
+        boolean bed = Common.EBNBList.contains("minecraft:bed");
         if (bed) {
             Vec3 vec3d = pos.getCenter();
             world.explode(null, world.damageSources().badRespawnPointExplosion(vec3d), null, vec3d, 5.0F, false, Level.ExplosionInteraction.NONE);

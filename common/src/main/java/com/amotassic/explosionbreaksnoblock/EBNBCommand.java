@@ -4,11 +4,6 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.level.GameRules;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static net.minecraft.commands.Commands.literal;
 
@@ -16,39 +11,20 @@ public class EBNBCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("explosionbreaksnoblock")
                 .requires(source -> source.hasPermission(2))
-                        .executes(EBNBCommand::executeQuery)
-                .then(literal("resetAll").executes(EBNBCommand::executeReset))
+                .then(literal("reload").executes(EBNBCommand::executeReload))
         );
     }
 
-    static int executeQuery(CommandContext<CommandSourceStack> context) {
+    static int executeReload(CommandContext<CommandSourceStack> context) {
         CommandSourceStack source = context.getSource();
-        MinecraftServer server = source.getServer();
-        int on = 0;
-        for (var key : getRules()) {
-            if (server.getGameRules().getBoolean(key)) {
-                var rule = server.getGameRules().getRule(key);
-                source.sendSuccess(() -> Component.translatable("commands.gamerule.query", key.getId(), rule.toString()), false);
-                on++;
-            }
+        try {
+            Common.loadConfig();
+            source.sendSuccess(() -> Component.translatable("Explosionbreaksnoblock config reloaded!"), true);
+            return 1;
+        } catch (Exception e) {
+            source.sendFailure(Component.translatable("Explosionbreaksnoblock config reload failed!"));
+            return 0;
         }
-        if (on == 0) source.sendSuccess(() -> Component.translatable("ebnb.not_enable"), false);
-        return on;
     }
 
-    static int executeReset(CommandContext<CommandSourceStack> context) {
-        CommandSourceStack source = context.getSource();
-        MinecraftServer server = source.getServer();
-        for (GameRules.Key<GameRules.BooleanValue> key : getRules()) {
-            server.getGameRules().getRule(key).set(false, server);
-        }
-        source.sendSuccess(() -> Component.translatable("ebnb.reset"), true);
-        return 1;
-    }
-
-    private static List<GameRules.Key<GameRules.BooleanValue>> getRules() {
-        List<GameRules.Key<GameRules.BooleanValue>> keys = new ArrayList<>(ExplosionRules.EBNB_RULES.values());
-        keys.addAll(ExplosionRules.ENID_RULES.values());
-        return keys;
-    }
 }

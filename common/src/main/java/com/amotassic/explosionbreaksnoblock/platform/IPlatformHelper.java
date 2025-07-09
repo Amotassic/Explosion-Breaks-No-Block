@@ -1,6 +1,6 @@
 package com.amotassic.explosionbreaksnoblock.platform;
 
-import net.minecraft.world.level.GameRules;
+import java.io.File;
 
 public interface IPlatformHelper {
 
@@ -19,6 +19,5 @@ public interface IPlatformHelper {
      */
     boolean isModLoaded(String modId);
 
-    GameRules.Key<GameRules.BooleanValue> ebnbRule(String name, String key);
-    GameRules.Key<GameRules.BooleanValue> enidRule(String name, String key);
+    File getConfigDirectory();
 }
