@@ -22,7 +22,7 @@ public abstract class BedBlockMixin {
         if (bed) {
             Vec3 vec3d = pos.getCenter();
             world.explode(null, world.damageSources().badRespawnPointExplosion(vec3d), null, vec3d, 5.0F, false, Level.ExplosionInteraction.NONE);
-            cir.setReturnValue(InteractionResult.SUCCESS);
+            cir.setReturnValue(InteractionResult.SUCCESS_SERVER);
         }
     }
 }
