@@ -22,10 +22,10 @@ public abstract class ItemEntityMixin extends Entity {
 
     @Inject(method = "hurt", at = @At(value = "HEAD"), cancellable = true)
     public void damage(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (!getItem().isEmpty() && (
+        if (!level().isClientSide && !getItem().isEmpty() && (
                 source.is(DamageTypeTags.IS_EXPLOSION)
         )) {
-            if (ExplosionBreaksNoBlock.cancelItemDamageByExplosion(source)) cir.setReturnValue(false);
+            if (ExplosionBreaksNoBlock.cancelItemDamageByExplosion(source, level())) cir.setReturnValue(false);
         }
     }
 }

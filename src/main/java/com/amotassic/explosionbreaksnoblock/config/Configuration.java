@@ -126,7 +126,7 @@ public class Configuration {
 			}
 
 			JsonObject fieldObject = new JsonObject();
-			fieldObject.addProperty("comment", annotation.comment());
+			fieldObject.add("comment", GSON.toJsonTree(annotation.comment()));
 
 			Object value;
 			try {
