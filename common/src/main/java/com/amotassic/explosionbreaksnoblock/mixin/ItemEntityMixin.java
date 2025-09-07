@@ -29,7 +29,7 @@ public abstract class ItemEntityMixin extends Entity {
                         source.is(DamageTypeTags.IS_EXPLOSION) ||
                                 (Services.PLATFORM.isModLoaded("dragonsurvival") && source.is(DamageTypes.WIND_CHARGE))
         )) {
-            if (Common.cancelItemDamageByExplosion(source)) cir.setReturnValue(false);
+            if (Common.cancelItemDamageByExplosion(source, level)) cir.setReturnValue(false);
         }
     }
 }
