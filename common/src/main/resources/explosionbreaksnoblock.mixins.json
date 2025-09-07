@@ -5,10 +5,8 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_18",
   "mixins": [
-    "BedBlockMixin",
-    "CreateExplosionMixin",
-    "ItemEntityMixin",
-    "RespawnAnchorMixin"
+    "LevelMixin",
+    "ItemEntityMixin"
   ],
   "client": [],
   "server": [],

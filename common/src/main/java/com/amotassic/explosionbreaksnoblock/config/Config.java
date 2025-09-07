@@ -51,7 +51,7 @@ public @interface Config {
 	 *
 	 * @return {@link String}
 	 */
-	String comment() default "";
+	String[] comment() default {};
 
 	/**
 	 * This is the config file name, the default is {@code config.cgf},

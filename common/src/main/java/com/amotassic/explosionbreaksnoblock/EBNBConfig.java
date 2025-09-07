@@ -6,16 +6,44 @@ public class EBNBConfig {
     private static final String ID = "explosionbreaksnoblock";
     private static final String GENERAL = "general";
 
-    @Config(config = ID, category = GENERAL, comment = "阻止所有爆炸破坏方块\n Prevent all explosions from destroying blocks")
+    @Config(config = ID, category = GENERAL, comment = {
+            "阻止所有爆炸破坏方块",
+            "Prevent all explosions from destroying blocks"
+    })
     public static boolean EBNB_ALL = false;
 
-    @Config(config = ID, category = GENERAL, comment = "阻止破坏方块的爆炸源列表\n List of explosion sources that no block destruction\n e.g. minecraft:bed; minecraft:respawn_anchor; minecraft:creeper")
+    @Config(config = ID, category = GENERAL, comment = {
+            "阻止破坏方块的爆炸源列表，可以填写方块ID或实体ID以及它们的标签（以#开头）",
+            "List of explosion sources that no block destruction, can be block id or entity id or tag (start with #)",
+            "e.g. #minecraft:beds; minecraft:respawn_anchor; minecraft:creeper"
+    })
     public static String ExplosionBreaksNoBlockList = "";
 
-    @Config(config = ID, category = GENERAL, comment = "阻止所有爆炸破坏掉落物\n Prevent all explosions from destroying item entities")
+    @Config(config = ID, category = GENERAL, comment = {
+            "不阻止破坏方块的爆炸源列表，当EBNB_ALL为true时，这里的爆炸源的行为不受影响",
+            "Even when EBNB_ALL is true, the behavior of these explosion sources is not affected",
+            "若你在此处填写minecraft:white_bed，即使ExplosionBreaksNoBlockList中填写了#minecraft:beds，白色床爆炸也仍会正常破坏方块",
+            "If you fill in minecraft:white_bed here, even if #minecraft:beds is filled in ExplosionBreaksNoBlockList, white bed will still break blocks when explodes"
+    })
+    public static String ExplosionBreaksNoBlockWhiteList = "";
+
+    @Config(config = ID, category = GENERAL, comment = {
+            "阻止所有爆炸破坏掉落物",
+            "Prevent all explosions from destroying item entities"
+    })
     public static boolean ENID_ALL = false;
 
-    @Config(config = ID, category = GENERAL, comment = "阻止破坏掉落物的爆炸源列表（由于一些原因，床和重生锚在此合并为respawn_blocks）\n List of explosion sources that no destroying item entities (Note: Bed and Respawn Anchor are merged as respawn_blocks due to technical reasons)\n e.g. respawn_blocks; minecraft:creeper; tacz:bullet")
+    @Config(config = ID, category = GENERAL, comment = {
+            "阻止破坏掉落物的爆炸源列表，可以填写方块ID或实体ID以及它们的标签（以#开头）",
+            "List of explosion sources that no destroying item entities, can be block id or entity id or tag (start with #)",
+            "e.g. #minecraft:beds; minecraft:respawn_anchor; minecraft:creeper; tacz:bullet"
+    })
     public static String ExplosionNoItemDamageList = "";
+
+    @Config(config = ID, category = GENERAL, comment = {
+            "不阻止破坏掉落物的爆炸源列表，当ENID_ALL为true时，这里的爆炸源的行为不受影响",
+            "Even when ENID_ALL is true, the behavior of these explosion sources is not affected"
+    })
+    public static String ExplosionNoItemDamageWhiteList = "";
 
 }
