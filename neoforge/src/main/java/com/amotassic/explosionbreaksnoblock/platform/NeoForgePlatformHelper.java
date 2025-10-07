@@ -14,6 +14,6 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
 
     @Override
     public File getConfigDirectory() {
-        return new File(FMLLoader.getGamePath().toFile(), "config");
+        return new File(FMLLoader.getCurrent().getGameDir().toFile(), "config");
     }
 }

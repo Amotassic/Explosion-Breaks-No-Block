@@ -66,7 +66,7 @@ public class BlockRemoveCache {
     }
 
     public static void onTick(Level level) {
-        if (!level.isClientSide && level.dimension() == Level.OVERWORLD) {
+        if (!level.isClientSide() && level.dimension() == Level.OVERWORLD) {
             blockRemoved.clear();
         }
     }
