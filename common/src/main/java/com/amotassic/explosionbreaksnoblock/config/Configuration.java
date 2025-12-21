@@ -23,7 +23,7 @@
  */
 package com.amotassic.explosionbreaksnoblock.config;
 
-import com.amotassic.explosionbreaksnoblock.platform.Services;
+import com.amotassic.explosionbreaksnoblock.Common;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
@@ -54,7 +54,7 @@ public class Configuration {
 
 	@SuppressWarnings({"ResultOfMethodCallIgnored", "CallToPrintStackTrace"})
 	private void setup() {
-		final File configDir = new File(Services.PLATFORM.getConfigDirectory(), modId);
+		final File configDir = new File(Common.PLATFORM.getConfigDirectory(), modId);
 
 		if (!configDir.exists()) configDir.mkdirs();
 

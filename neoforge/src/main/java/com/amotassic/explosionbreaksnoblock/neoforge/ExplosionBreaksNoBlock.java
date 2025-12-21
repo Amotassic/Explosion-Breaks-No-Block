@@ -1,5 +1,8 @@
-package com.amotassic.explosionbreaksnoblock;
+package com.amotassic.explosionbreaksnoblock.neoforge;
 
+import com.amotassic.explosionbreaksnoblock.BlockRemoveCache;
+import com.amotassic.explosionbreaksnoblock.Common;
+import com.amotassic.explosionbreaksnoblock.EBNBCommand;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;

@@ -1,5 +1,8 @@
-package com.amotassic.explosionbreaksnoblock;
+package com.amotassic.explosionbreaksnoblock.fabric;
 
+import com.amotassic.explosionbreaksnoblock.BlockRemoveCache;
+import com.amotassic.explosionbreaksnoblock.Common;
+import com.amotassic.explosionbreaksnoblock.EBNBCommand;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;

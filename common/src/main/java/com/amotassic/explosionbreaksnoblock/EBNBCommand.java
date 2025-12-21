@@ -3,6 +3,7 @@ package com.amotassic.explosionbreaksnoblock;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 
 import static net.minecraft.commands.Commands.literal;
@@ -10,7 +11,7 @@ import static net.minecraft.commands.Commands.literal;
 public class EBNBCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(literal("explosionbreaksnoblock")
-                .requires(source -> source.hasPermission(2))
+                .requires(Commands.hasPermission(Commands.LEVEL_GAMEMASTERS))
                 .then(literal("reload").executes(EBNBCommand::executeReload))
         );
     }

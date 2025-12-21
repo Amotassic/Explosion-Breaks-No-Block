@@ -1,5 +1,6 @@
-package com.amotassic.explosionbreaksnoblock.platform;
+package com.amotassic.explosionbreaksnoblock.fabric;
 
+import com.amotassic.explosionbreaksnoblock.platform.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.File;

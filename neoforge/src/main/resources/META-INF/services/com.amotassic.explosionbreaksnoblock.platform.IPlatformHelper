@@ -1,1 +1,2 @@
-com.amotassic.explosionbreaksnoblock.platform.NeoForgePlatformHelper
+com.amotassic.explosionbreaksnoblock.neoforge.NeoForgePlatformHelper
+com.amotassic.explosionbreaksnoblock.fabric.FabricPlatformHelper

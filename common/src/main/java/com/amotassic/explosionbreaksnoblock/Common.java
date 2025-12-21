@@ -1,9 +1,10 @@
 package com.amotassic.explosionbreaksnoblock;
 
 import com.amotassic.explosionbreaksnoblock.config.Configuration;
+import com.amotassic.explosionbreaksnoblock.platform.IPlatformHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.ServiceLoader;
 import java.util.stream.Collectors;
 
 public class Common {
@@ -23,10 +25,28 @@ public class Common {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
     public static Configuration config;
     private static List<String> EBNBList, ENIDList, EBNBWhiteList, ENIDWhiteList;
+    public static final IPlatformHelper PLATFORM = loadService();
 
     public static void init() {
         LOGGER.info("Ciallo～(∠·ω< )⌒★");
         loadConfig();
+    }
+
+    private static IPlatformHelper loadService() {
+        boolean isFabric;
+        try {
+            Class.forName("net.neoforged.neoforge.common.NeoForge");
+            isFabric = false;
+        } catch (ClassNotFoundException e) {
+            isFabric = true;
+        }
+        var loaded = ServiceLoader.load(IPlatformHelper.class);
+        for (var service : loaded) {
+            if (isFabric) {
+                if (service.getPlatformName().equals("Fabric")) return service;
+            } else if (service.getPlatformName().equals("NeoForge")) return service;
+        }
+        throw new NullPointerException("Failed to load service for " + IPlatformHelper.class.getName());
     }
 
     public static void loadConfig() {
@@ -65,7 +85,7 @@ public class Common {
 
     private static boolean isEntityInTag(String tagName, Entity entity) {
         String tag = tagName.replace("#", "");
-        return entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.parse(tag)));
+        return entity.is(TagKey.create(Registries.ENTITY_TYPE, Identifier.parse(tag)));
     }
 
     private static boolean isInList(List<String> list, Entity entity, Level level, Object... pos) {

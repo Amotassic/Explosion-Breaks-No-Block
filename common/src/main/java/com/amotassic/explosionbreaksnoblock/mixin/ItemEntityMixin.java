@@ -1,7 +1,6 @@
 package com.amotassic.explosionbreaksnoblock.mixin;
 
 import com.amotassic.explosionbreaksnoblock.Common;
-import com.amotassic.explosionbreaksnoblock.platform.Services;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -27,7 +26,7 @@ public abstract class ItemEntityMixin extends Entity {
     public void damage(ServerLevel level, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (!getItem().isEmpty() && (
                         source.is(DamageTypeTags.IS_EXPLOSION) ||
-                                (Services.PLATFORM.isModLoaded("dragonsurvival") && source.is(DamageTypes.WIND_CHARGE))
+                                (Common.PLATFORM.isModLoaded("dragonsurvival") && source.is(DamageTypes.WIND_CHARGE))
         )) {
             if (Common.cancelItemDamageByExplosion(source, level)) cir.setReturnValue(false);
         }

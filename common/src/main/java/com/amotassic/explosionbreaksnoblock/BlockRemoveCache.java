@@ -3,8 +3,8 @@ package com.amotassic.explosionbreaksnoblock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BlockRemoveCache {
+public  class BlockRemoveCache {
     public static final Map<ResourceKey<Level>, Map<BlockPos, String>> blockRemoved = new HashMap<>();
 
     public static void record(Level level, BlockPos pos) {
@@ -60,8 +60,8 @@ public class BlockRemoveCache {
 
     public static boolean isBlockInTag(String tagName, Level level, Object... pos) {
         String tag = tagName.replace("#", "");
-        TagKey<Block> tagKey = TagKey.create(Registries.BLOCK, ResourceLocation.parse(tag));
-        BlockState state = BuiltInRegistries.BLOCK.getValue(ResourceLocation.parse(getBlockId(level, pos))).defaultBlockState();
+        TagKey<Block> tagKey = TagKey.create(Registries.BLOCK, Identifier.parse(tag));
+        BlockState state = BuiltInRegistries.BLOCK.getValue(Identifier.parse(getBlockId(level, pos))).defaultBlockState();
         return state.is(tagKey);
     }
 

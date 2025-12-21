@@ -1,5 +1,6 @@
-package com.amotassic.explosionbreaksnoblock.platform;
+package com.amotassic.explosionbreaksnoblock.neoforge;
 
+import com.amotassic.explosionbreaksnoblock.platform.IPlatformHelper;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 
