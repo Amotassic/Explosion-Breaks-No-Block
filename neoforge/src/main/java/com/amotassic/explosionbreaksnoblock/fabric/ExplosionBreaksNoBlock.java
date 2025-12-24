@@ -11,6 +11,7 @@ public class ExplosionBreaksNoBlock implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        Common.PLATFORM = new FabricPlatformHelper();
         Common.init();
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> EBNBCommand.register(dispatcher));
         ServerTickEvents.END_WORLD_TICK.register(BlockRemoveCache::onTick);

@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.ServiceLoader;
 import java.util.stream.Collectors;
 
 public class Common {
@@ -25,28 +24,11 @@ public class Common {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
     public static Configuration config;
     private static List<String> EBNBList, ENIDList, EBNBWhiteList, ENIDWhiteList;
-    public static final IPlatformHelper PLATFORM = loadService();
+    public static IPlatformHelper PLATFORM;
 
     public static void init() {
         LOGGER.info("Ciallo～(∠·ω< )⌒★");
         loadConfig();
-    }
-
-    private static IPlatformHelper loadService() {
-        boolean isFabric;
-        try {
-            Class.forName("net.neoforged.neoforge.common.NeoForge");
-            isFabric = false;
-        } catch (ClassNotFoundException e) {
-            isFabric = true;
-        }
-        var loaded = ServiceLoader.load(IPlatformHelper.class);
-        for (var service : loaded) {
-            if (isFabric) {
-                if (service.getPlatformName().equals("Fabric")) return service;
-            } else if (service.getPlatformName().equals("NeoForge")) return service;
-        }
-        throw new NullPointerException("Failed to load service for " + IPlatformHelper.class.getName());
     }
 
     public static void loadConfig() {

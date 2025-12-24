@@ -1,3 +1,4 @@
+/*
 package com.amotassic.explosionbreaksnoblock.fabric;
 
 import com.amotassic.explosionbreaksnoblock.platform.IPlatformHelper;
@@ -7,8 +8,6 @@ import java.io.File;
 
 public class FabricPlatformHelper implements IPlatformHelper {
 
-    @Override public String getPlatformName() {return "Fabric";}
-
     @Override
     public boolean isModLoaded(String modId) {return FabricLoader.getInstance().isModLoaded(modId);}
 
@@ -17,3 +16,4 @@ public class FabricPlatformHelper implements IPlatformHelper {
         return FabricLoader.getInstance().getConfigDir().toFile();
     }
 }
+*/

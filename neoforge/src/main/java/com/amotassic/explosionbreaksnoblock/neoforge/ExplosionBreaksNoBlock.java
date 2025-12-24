@@ -13,6 +13,7 @@ import net.neoforged.neoforge.event.tick.LevelTickEvent;
 public class ExplosionBreaksNoBlock {
 
     public ExplosionBreaksNoBlock(IEventBus eventBus) {
+        Common.PLATFORM = new NeoForgePlatformHelper();
         Common.init();
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, evt -> EBNBCommand.register(evt.getDispatcher()));
         NeoForge.EVENT_BUS.addListener(this::onTick);
