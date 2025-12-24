@@ -1,4 +1,3 @@
-/*
 package com.amotassic.explosionbreaksnoblock.fabric;
 
 import com.amotassic.explosionbreaksnoblock.platform.IPlatformHelper;
@@ -16,4 +15,3 @@ public class FabricPlatformHelper implements IPlatformHelper {
         return FabricLoader.getInstance().getConfigDir().toFile();
     }
 }
-*/

@@ -67,7 +67,7 @@ public class Common {
 
     private static boolean isEntityInTag(String tagName, Entity entity) {
         String tag = tagName.replace("#", "");
-        return entity.is(TagKey.create(Registries.ENTITY_TYPE, Identifier.parse(tag)));
+        return entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, Identifier.parse(tag)));
     }
 
     private static boolean isInList(List<String> list, Entity entity, Level level, Object... pos) {

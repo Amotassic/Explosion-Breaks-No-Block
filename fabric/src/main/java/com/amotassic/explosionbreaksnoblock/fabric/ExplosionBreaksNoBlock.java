@@ -1,4 +1,3 @@
-/*
 package com.amotassic.explosionbreaksnoblock.fabric;
 
 import com.amotassic.explosionbreaksnoblock.BlockRemoveCache;
@@ -18,4 +17,3 @@ public class ExplosionBreaksNoBlock implements ModInitializer {
         ServerTickEvents.END_WORLD_TICK.register(BlockRemoveCache::onTick);
     }
 }
-*/

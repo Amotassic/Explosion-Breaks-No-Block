@@ -3,18 +3,6 @@ plugins {
     id 'net.neoforged.moddev'
 }
 
-repositories {
-    maven {
-        name = 'Fabric'
-        url = uri('https://maven.fabricmc.net')
-    }
-}
-
-dependencies {
-    compileOnly "net.fabricmc:fabric-loader:${fabric_loader_version}"
-    compileOnly "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
-}
-
 neoForge {
     version = neoforge_version
     // Automatically enable neoforge AccessTransformers if the file exists
