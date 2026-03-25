@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.HashMap;
 import java.util.Map;
 
-public  class BlockRemoveCache {
+public class BlockRemoveCache {
     public static final Map<ResourceKey<Level>, Map<BlockPos, String>> blockRemoved = new HashMap<>();
 
     public static void record(Level level, BlockPos pos) {
